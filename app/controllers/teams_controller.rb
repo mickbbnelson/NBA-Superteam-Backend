@@ -14,4 +14,16 @@ class TeamsController < ApplicationController
         }
         render json: TeamSerializer.new(team, options)
     end
+
+    def create
+        team = Team.new(team_params)
+    end
+
+
+    private
+
+    def team_params
+        params.require(:team).permit(:name)
+    end
+
 end
