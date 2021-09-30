@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
         options = {
             include: [:players]
         }
-        render json: TeamSerializer.new(teams)
+        render json: TeamSerializer.new(teams, options)
     end
 
     def show
@@ -12,6 +12,6 @@ class TeamsController < ApplicationController
         options = {
             include: [:players]
         }
-        render json: TeamSerializer.new(team)
+        render json: TeamSerializer.new(team, options)
     end
 end
