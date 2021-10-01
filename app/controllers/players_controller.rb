@@ -14,4 +14,8 @@ class PlayersController < ApplicationController
         }
         render json: PlayerSerializer.new(player, options)
     end
+
+    def player_params
+        params.require(:player).permit(:name, :position, :description, :team_id)
+    end
 end
