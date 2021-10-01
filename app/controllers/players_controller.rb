@@ -15,6 +15,15 @@ class PlayersController < ApplicationController
         render json: PlayerSerializer.new(player, options)
     end
 
+    def create
+        player = Player.new(team_params)
+        if player.save
+            render json: player
+        else
+            render json: {error: "Failed to add"}
+        end
+    end
+
     def player_params
         params.require(:player).permit(:name, :position, :description, :team_id)
     end
