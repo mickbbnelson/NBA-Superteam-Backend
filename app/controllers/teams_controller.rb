@@ -25,6 +25,12 @@ class TeamsController < ApplicationController
     end
 
 
+    def destroy
+        team = Team.find_by_id(params[:id])
+        team.destroy
+        render json: {message: "Successfully deleted"}
+    end
+
     private
 
     def team_params
