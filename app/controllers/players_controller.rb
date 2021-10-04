@@ -24,6 +24,12 @@ class PlayersController < ApplicationController
         end
     end
 
+    def destroy
+        player = Player.find_by_id(params[:id])
+        player.destroy
+        render json: {message: "Successfully deleted"}
+    end
+
     def player_params
         params.require(:player).permit(:name, :position, :description, :team_id)
     end
