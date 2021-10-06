@@ -7,14 +7,6 @@ class TeamsController < ApplicationController
         render json: TeamSerializer.new(teams, options)
     end
 
-    def show
-        team = Team.find_by(id: params[:id])
-        options = {
-            include: [:players]
-        }
-        render json: TeamSerializer.new(team, options)
-    end
-
     def create
         team = Team.new(team_params)
         if team.save
@@ -27,6 +19,11 @@ class TeamsController < ApplicationController
 
     def destroy
         team = Team.find_by_id(params[:id])
+        Player.all.each do |player|
+            if player.team_id == team.id
+                player.destroy
+            end
+        end
         team.destroy
         render json: {message: "Successfully deleted"}
     end

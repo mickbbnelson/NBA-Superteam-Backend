@@ -7,14 +7,6 @@ class PlayersController < ApplicationController
         render json: PlayerSerializer.new(players, options)
     end
 
-    def show
-        player = Player.find_by(id: params[:id])
-        options = {
-            include: [:team]
-        }
-        render json: PlayerSerializer.new(player, options)
-    end
-
     def create
         player = Player.new(player_params)
         if player.save
