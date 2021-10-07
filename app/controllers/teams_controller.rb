@@ -19,11 +19,6 @@ class TeamsController < ApplicationController
 
     def destroy
         team = Team.find_by_id(params[:id])
-        Player.all.each do |player|
-            if player.team_id == team.id
-                player.destroy
-            end
-        end
         team.destroy
         render json: {message: "Successfully deleted"}
     end
