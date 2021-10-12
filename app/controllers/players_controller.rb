@@ -22,6 +22,7 @@ class PlayersController < ApplicationController
         render json: {message: "Successfully deleted"}
     end
 
+    
     def player_params
         params.require(:player).permit(:name, :position, :description, :team_id)
     end
