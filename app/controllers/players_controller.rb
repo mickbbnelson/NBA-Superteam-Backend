@@ -10,7 +10,7 @@ class PlayersController < ApplicationController
     def create
         player = Player.new(player_params)
         if player.save
-            render json: player
+            render json: PlayerSerializer.new(player)
         else
             render json: {error: "Failed to add"}
         end
@@ -22,7 +22,7 @@ class PlayersController < ApplicationController
         render json: {message: "Successfully deleted"}
     end
 
-    
+
     def player_params
         params.require(:player).permit(:name, :position, :description, :team_id)
     end
