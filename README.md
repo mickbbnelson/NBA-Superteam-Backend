@@ -20,6 +20,8 @@ Contributing:
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mickbbnelson/NBA-Superteam-Frontend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
+-To start a new draft, exit out of the server in the backend and run rails "db:reset". Then rerun the server by typing "rails s"
+
 License:
 
 The gem is available as open source under the terms of the MIT License.
