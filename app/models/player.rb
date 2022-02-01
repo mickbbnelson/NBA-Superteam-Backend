@@ -4,4 +4,5 @@ class Player < ApplicationRecord
   def squad
     self.team
   end
+
 end
