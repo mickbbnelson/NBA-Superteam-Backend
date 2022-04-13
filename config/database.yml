@@ -84,3 +84,4 @@ production:
   database: NBA_superteam_backend_production
   username: NBA_superteam_backend
   password: <%= ENV['NBA_SUPERTEAM_BACKEND_DATABASE_PASSWORD'] %>
+  adapter: 'postgresql'
