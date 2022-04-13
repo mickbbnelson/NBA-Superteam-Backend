@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root "players#index"
+  root to: 'teams#index'
 
   resources :players
   resources :teams
