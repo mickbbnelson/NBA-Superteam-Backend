@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://nba-superteam-backend.herokuapp.com/' #need to add the correct url once deployed.
+    origins '*' #need to add the correct url once deployed.
     resource '*',
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
